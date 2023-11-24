@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <button onclick="openTerminal('centos')">CentOS</button>
+    <button onclick="openTerminal('amazon')">Amazon Linux</button>
+    <button onclick="openTerminal('ubuntu')">Ubuntu</button>
+
+    <script>
+        function openTerminal(os) {
+            // Redirect to the terminal page with the selected OS
+            window.location.href = `/terminal/${os}`;
+        }
+    </script>
+</body>
+</html>
+
