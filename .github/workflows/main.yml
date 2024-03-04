@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: self-hosted  #if you want own host so give self hosted 
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+     
+      - name: go to clone directory
+        run: cd /home/ubuntu/website-project    #give your actual path of your local repo 
+        
+      - name: copy all files in /var/www/html
+        run: cp -r * /var/www/html
+
+      #- name: Push Docker image to Docker Hub
+       # run: docker push mohitgaur1272/w3:$RUNNER_NUMBER
+    
+
+      #- name: Pull Docker image from Docker Hub
+       # run: docker pull mohitgaur1272/w3:$RUNNER_NUMBER
+        
+      #- name: Run Docker container
+       # run: docker run -itd --name mohit -p 100:80 mohitgaur1272/w3:$RUNNER_NUMBER
+
+#if you want to push this image on docker hub so you have to do create credintial 
+#in #secrete and then use in this file
+
+
+# first of all save your docker hub user id password in github repo secret 
+
+     
